@@ -5,7 +5,10 @@ include(KDE4Defaults)
 
 set(orario_SRC
     main.cpp
+    orariowidget.cpp
 )
+
+kde4_add_ui_files( orario_SRC orariowidget.ui )
 
 include_directories(${KDE4_INCLUDES})
 

@@ -12,6 +12,8 @@
 #include <KAboutData>
 #include <KLocale>
 #include <KCmdLineArgs>
+#include <KMainWindow>
+#include "ui_orariowidget.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,6 +30,13 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions(options);
     KCmdLineArgs::parsedArgs();
     KApplication app;
+    
+    KMainWindow *wi = new KMainWindow;
+    QWidget *w = new QWidget;
+    Ui::Form ui;
+    ui.setupUi(w);
+    wi->setCentralWidget(w);
+    wi->show();
 
     return app.exec();
 }
